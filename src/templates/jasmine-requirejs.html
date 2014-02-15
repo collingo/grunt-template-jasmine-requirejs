@@ -18,7 +18,9 @@
         message += error.message;
       }
 
-      throw Error(message);
+      if(error.requireType !== "define") {
+        throw Error(message);
+      }
     };
   </script>
 
